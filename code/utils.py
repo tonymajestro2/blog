@@ -2,8 +2,6 @@ import hashlib
 import random
 import string
 
-SECRET = "lbIGauchCnAiFyulwzNizpXGVGVqQuhu"
-
 
 def make_salt(length):
     return ''.join([random.choice(string.letters) for x in range(length)])
