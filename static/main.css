@@ -65,7 +65,7 @@ nav a {
     padding: 5px;
     width: 60px;
     color: #FFFAE0;
-    background-color: #0E1D24;
+    background-color: #0B161C;
     text-decoration: none;
     text-align: center;
     font-size: 13px;
@@ -76,7 +76,7 @@ nav li + li {
 }
 
 nav a:hover {
-    background-color: #0C191F;
+    background-color: #050A0D;
 }
 
 footer {
