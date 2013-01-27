@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link type="text/css" rel="stylesheet" href="static/main.css">
+</head>
+
+<body>
+    <header>
+        <div id="headerText">
+            <a href="/"><h1>Tiny Blogs</h1> <h2>Just fucking use it.</h2></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+

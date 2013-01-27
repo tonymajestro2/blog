@@ -1,0 +1,37 @@
+Handlers:
+---------
+- /: mainpage
+- /[name]: handler for [name]'s frontpage of blog
+- /[name]/[post_num]: handler for the specific post for the user
+
+Mainpage:
+---------
+- masthead
+- login button
+- register button
+
+User frontpage:
+--------------
+- username/nickname
+- list of 10 most recent posts
+    - each post has button to take you to specific post
+- show more posts button
+
+Misc:
+-----
+- need blog name
+- ideas for styling
+
+Images:
+------
+
+
++------------------+
+|  [Blog Name]     |
+|                  |
+|   login link     |
+|   register link  |
+|                  |
+|                  |
+|                  |
++------------------+

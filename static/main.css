@@ -1,0 +1,128 @@
+/* Main page */
+
+body {
+    margin: 0 auto;
+    margin-top: -2px;
+    width: 800px;
+}
+
+header {
+    background-color: #142933;
+    position: relative;
+}
+
+header #headerText a {
+    text-decoration: none;
+    color: #FFFAE0;
+    font-family: sans-serif;
+}
+
+header #headerText a:hover {
+    text-decoration: underline;
+}
+
+header #headerText {
+    color: #FFFAE0;
+    padding: 10px 0px 10px 30px;
+}
+
+header h2 {
+    margin-top: -20px;
+    padding-left: 65px;
+    font-size: 11px;
+    font-family: sans-serif;
+}
+
+#container {
+    width: 800px;
+}
+
+#container h2 {
+    padding: 10px 0px 10px 10px;
+    background-color: #33664D;
+    font-size: 17px;
+    color: #FFF9EE;
+}
+
+nav  {
+    position: absolute;
+    right: 0px;
+    bottom: 3px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    background-color: #70995C;
+    width: 100px;
+    padding: 5px;
+    text-decoration: none;
+    color: #FFFAE0;
+    font-size: 13px;
+}
+
+nav a:hover {
+    background-color: #60894C;
+}
+
+
+
+
+
+/* Login / Register*/
+
+#login_container {
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 15px 0px 10px 20px;
+    margin-top: -15px;
+}
+
+#register_container {
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 15px 0px 10px 20px;
+    margin-top: -15px;
+}
+
+.field_container label {
+    font-size: 14px;
+    width: 120px;
+    padding: 3px 0px 3px 5px;
+    float: left;
+}
+
+.field_container + .field_container {
+    padding-top: 5px;
+}
+
+#register_container input[type=submit] {
+    margin-top: 10px;
+}
+
+
+/* Misc */
+
+#login_container .error {
+    color: #8C1D04;
+    font-size: 14px;
+    padding-left: 205px;
+}
+
+#register_container .error {
+    padding-left: 20px;
+    color: #8C1D04;
+    font-size: 14px;
+}
+
+
