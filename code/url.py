@@ -1,6 +1,7 @@
 import webapp2
-from base import Main, Login
+from base import Main
 from register import Register
+from login import Login
 
 args = [("/", Main),
         ("/login", Login),
