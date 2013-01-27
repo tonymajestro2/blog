@@ -79,6 +79,18 @@ nav a:hover {
     background-color: #0C191F;
 }
 
+footer {
+    position: absolute;
+    padding-bottom: 5px;
+    bottom: 0px;
+    font-size: 10px;
+    width: 100%;
+}
+
+footer #quote {
+    text-align: center;
+}
+
 
 
 
