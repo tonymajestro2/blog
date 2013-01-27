@@ -47,30 +47,36 @@ header h2 {
 nav  {
     position: absolute;
     right: 0px;
-    bottom: 3px;
+    bottom: 0px;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 nav li {
-    display: inline;
+    float: left;
 }
 
 nav a {
-    background-color: #70995C;
-    width: 100px;
+    display: block;
     padding: 5px;
-    text-decoration: none;
+    width: 60px;
     color: #FFFAE0;
+    background-color: #0E1D24;
+    text-decoration: none;
+    text-align: center;
     font-size: 13px;
 }
 
+nav li + li {
+    border-left: 1px solid #142933;
+}
+
 nav a:hover {
-    background-color: #60894C;
+    background-color: #0C191F;
 }
 
 
@@ -85,6 +91,7 @@ nav a:hover {
     border-bottom: 1px solid #cccccc;
     padding: 15px 0px 10px 20px;
     margin-top: -15px;
+    background-color: white;
 }
 
 #register_container {
