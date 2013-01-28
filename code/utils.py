@@ -34,10 +34,6 @@ def verify_pw(username, password, h):
     salt = parts[1]
     return h == make_pw_hash(username, password, salt)
 
-# Cookies stuff
-def hash_str(s):
-    """ Create a hash using the secret key for use in session tokens. """
-    return hmac.new(SECRET, s).hexdigest()
 
 def make_session_token(id_val):
     """ Combine the string s with its hash to create a secure value to be
@@ -54,6 +50,10 @@ def validate_session_token(token):
     """
     id_val = token.split("|")[0]
     return token == make_session_token(id_val)
+
+def hash_str(s):
+    """ Create a hash using the secret key for use in session tokens. """
+    return hmac.new(SECRET, s).hexdigest()
 
 
 

@@ -17,6 +17,8 @@ class Login(BaseHandler):
         if not self._valid_login_credentials(username, password):
             self.render_page(login_error = "Invalid login")
         else:
+            user = User.get_by_name(username)
+            self.login(user)
             self.redirect("/")
 
     def _valid_login_credentials(self, username, password):
@@ -26,5 +28,14 @@ class Login(BaseHandler):
 
         h = user.pw_hash
         return utils.verify_pw(username, password, h)
+
+
+class Logout(BaseHandler):
+    def get(self):
+        self.logout()
+        self.redirect("/")
+
+
+
 
 
