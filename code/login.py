@@ -17,6 +17,7 @@ class Login(BaseHandler):
         if not self._valid_login_credentials(username, password):
             self.render_page(login_error = "Invalid login")
         else:
+            self.login()
             self.redirect("/")
 
     def _valid_login_credentials(self, username, password):
