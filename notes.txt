@@ -1,3 +1,19 @@
+To Do:
+--------
+- Fix login from main page (errors don't report)
+- Fix login from login page (errors don't report)
+- ** Add https to login pages **
+- Get actual blogging functionality
+- Add public/private functionality
+    - add option to register page
+- Add account info page
+    - change password
+    - change email
+    - change account visibility (private, public)
+    
+
+
+
 Handlers:
 ---------
 - /: mainpage
