@@ -89,7 +89,7 @@ footer #quote {
 /* main page */
 
 #main_page {
-    padding-left: 5%;
+    padding-left: 3%;
     font-family: arial, helvetica, sans-serif;
 
 }
@@ -106,6 +106,7 @@ footer #quote {
 
 #main_page h3 {
     font-size: 17px;
+    margin-bottom: -7px;
 }
 
 #main_page #left_col {
@@ -120,7 +121,15 @@ footer #quote {
     width: 35%;
 }
 
+#main_page p a {
+    text-decoration: none;
+    color: #125475;
+}
 
+
+#main_page p a:hover {
+    text-decoration: underline;
+}
 
 
 
