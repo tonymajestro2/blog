@@ -37,12 +37,6 @@ header h2 {
     width: 800px;
 }
 
-#container h2 {
-    padding: 10px 0px 10px 10px;
-    background-color: #33664D;
-    font-size: 17px;
-    color: #FFF9EE;
-}
 
 nav  {
     position: absolute;
@@ -92,11 +86,59 @@ footer #quote {
 }
 
 
+/* main page */
+
+#main_page {
+    padding-left: 5%;
+    font-family: arial, helvetica, sans-serif;
+
+}
+
+#main_page h2 {
+    color: #142933;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+#main_page p {
+    font-size: 15px;
+}
+
+#main_page h3 {
+    font-size: 17px;
+}
+
+#main_page #left_col {
+    float: left;
+    width: 55%;
+    padding-right: 10%;
+}
+
+#main_page #right_col {
+    padding-top: 5%;
+    float: left;
+    width: 35%;
+}
+
+
 
 
 
 /* Login / Register*/
 
+#login_content h2 {
+    padding: 10px 0px 10px 10px;
+    background-color: #33664D;
+    font-size: 17px;
+    color: #FFF9EE;
+}
+
+#register_content h2 {
+    padding: 10px 0px 10px 10px;
+    background-color: #33664D;
+    font-size: 17px;
+    color: #FFF9EE;
+}
 #login_container {
     border-left: 1px solid #cccccc;
     border-right: 1px solid #cccccc;

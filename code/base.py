@@ -22,14 +22,17 @@ class BaseHandler(webapp2.RequestHandler):
 
         return params
 
+    def get_html(self, template, **params):
+        t = jinja_env.get_template(template)
+        return t.render(**params)
+
     def render(self, template, title, **params):
         if params == None:
             params = {}
 
-        self.set_log_links(params)
-        t = jinja_env.get_template(template)
         params["title"] = title
-        html_str = t.render(params)
+        self.set_log_links(params)
+        html_str = self.get_html(template, **params)
         self.response.out.write(html_str)
 
     def set_cookie(self, name, value):
@@ -57,7 +60,10 @@ class BaseHandler(webapp2.RequestHandler):
 
 class Main(BaseHandler):
     def get(self):
-        self.render("base.html", "Blog")
+        self.render("main.html", "Blog", s = self)
+
+    def render_login(self):
+        return self.get_html("login.html")
 
 
 
