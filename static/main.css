@@ -1,7 +1,7 @@
 /* Main page */
 
 body {
-    width: 800px;
+    width: 850px;
     margin: 0 auto;
     margin-top: -2px;
 }
@@ -34,7 +34,7 @@ header h2 {
 }
 
 #container {
-    width: 800px;
+    padding-top: 20px;
 }
 
 
@@ -89,7 +89,7 @@ footer #quote {
 /* main page */
 
 #main_page {
-    padding-left: 3%;
+    padding-left: 6%;
     font-family: arial, helvetica, sans-serif;
 
 }
@@ -131,12 +131,25 @@ footer #quote {
     text-decoration: underline;
 }
 
+#main_page #login_container {
+    padding-left: 25px;
+}
+
+#main_page #login_container label {
+    font-weight: bold;
+    font-size: 13px;
+    padding-left: 0px;
+}
+
+
+
+
 
 
 /* Login / Register*/
 
 #login_content h2 {
-    padding: 10px 0px 10px 10px;
+    padding: 10px 5px 10px 10px;
     background-color: #33664D;
     font-size: 17px;
     color: #FFF9EE;
