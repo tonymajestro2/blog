@@ -1,9 +1,9 @@
 /* Main page */
 
 body {
+    width: 800px;
     margin: 0 auto;
     margin-top: -2px;
-    width: 800px;
 }
 
 header {
@@ -84,7 +84,7 @@ footer {
     padding-bottom: 5px;
     bottom: 0px;
     font-size: 10px;
-    width: 100%;
+    width: 800px;
 }
 
 footer #quote {
