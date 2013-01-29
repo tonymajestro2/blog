@@ -4,15 +4,12 @@ from models import User
 
 
 class Login(BaseHandler):
-    def render_login(self):
-        return self.get_html("login.html")
+    def render_login(self, **errors):
+        return self.get_html("login.html", **errors)
 
-    def render_page(self, **params):
-        if params == None:
-            params = {}
-
-        params["s"] = self
-        self.render("login_page.html", "Login", **params)
+    def render_page(self, **errors):
+        login_form = self.render_login(**errors)
+        self.render("login_page.html", "Login", login_form = login_form)
 
     def get(self):
         self.render_page()

@@ -60,10 +60,8 @@ class BaseHandler(webapp2.RequestHandler):
 
 class Main(BaseHandler):
     def get(self):
-        self.render("main.html", "Blog", s = self)
-
-    def render_login(self):
-        return self.get_html("login.html")
+        login_form = self.get_html("login.html")
+        self.render("main.html", "Blog", login_form = login_form)
 
 
 
