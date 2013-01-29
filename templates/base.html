@@ -16,7 +16,7 @@
             <nav>
                 <ul>
                     <li><a href="{{ log_link }}">{{ log_text }}</a></li>
-                    <li><a href="/register">Register</a></li>
+                    {{ register_link | safe }}
                 </ul>
             </nav>
         </header>

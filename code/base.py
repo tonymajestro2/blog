@@ -12,13 +12,14 @@ jinja_env = jinja2.Environment(
 
 
 class BaseHandler(webapp2.RequestHandler):
-    def set_log_links(self, params):
+    def set_header_links(self, params):
         if self.get_user():
             params["log_link"] = "/logout"
             params["log_text"] = "Logout"
         else:
             params["log_link"] = "/login"
             params["log_text"] = "Login"
+            params["register_link"] = """<li><a href="/register">Register</a></li>"""
 
         return params
 
@@ -31,7 +32,7 @@ class BaseHandler(webapp2.RequestHandler):
             params = {}
 
         params["title"] = title
-        self.set_log_links(params)
+        self.set_header_links(params)
         html_str = self.get_html(template, **params)
         self.response.out.write(html_str)
 
