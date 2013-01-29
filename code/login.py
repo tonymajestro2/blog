@@ -24,6 +24,7 @@ class Login(BaseHandler):
             user = User.get_by_name(username)
             self.login(user)
             self.redirect("/{0}".format(username))
+            return
 
     def _valid_login_credentials(self, username, password):
         user = User.get_by_name(username)
@@ -38,6 +39,7 @@ class Logout(BaseHandler):
     def get(self):
         self.logout()
         self.redirect("/")
+        return
 
 
 

@@ -1,10 +1,27 @@
 /* Main page */
 
+html {
+    height: 100%;
+}
+
 body {
     width: 850px;
     margin: 0 auto;
     margin-top: -2px;
+    height: 100%;
 }
+
+#content {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+
+footer, .push {
+    height: 1em;
+}
+
 
 header {
     background-color: #142933;
@@ -74,7 +91,7 @@ nav a:hover {
 }
 
 footer {
-    position: absolute;
+    padding-top: 50px;
     padding-bottom: 5px;
     bottom: 0px;
     font-size: 10px;
@@ -194,6 +211,51 @@ footer #quote {
 }
 
 
+/* front page */
+#front_container {
+    padding-left: 6%;
+    font-family: sans-serif;
+}
+
+#front_container header {
+    position: relative;
+    background-color: #33664D;
+    width: 100%;
+}
+
+#front_container #post + #post {
+    padding-top: 15px;
+}
+
+#front_container h2 {
+    color: #142933;
+    font-size: 25px;
+    font-weight: normal;
+    padding-bottom: 20px;
+}
+
+#front_container h3 {
+    padding: 10px 5px 10px 10px;
+    font-size: 17px;
+    color: #FFF9EE;
+}
+
+#front_container h4 {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #FFF9EE;
+    font-size: 13px;
+    font-weight: none;
+    padding-right: 5px;
+}
+
+#front_container pre {
+    font-family: sans-serif;
+    padding-left: 5px;
+}
+
+
 /* Misc */
 
 #login_container .error {
@@ -207,5 +269,7 @@ footer #quote {
     color: #8C1D04;
     font-size: 14px;
 }
+
+
 
 

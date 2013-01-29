@@ -36,3 +36,10 @@ class Post(db.Model):
     body = db.TextProperty(required = True)
     created = db.DateTimeProperty(auto_now_add = True)
 
+    @classmethod
+    def register(cls, user, title, body):
+        return Post(user = user, title = title, body = body)
+
+
+
+

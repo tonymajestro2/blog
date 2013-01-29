@@ -36,6 +36,7 @@ class Register(BaseHandler):
             user = User.register(username, password, email)
             user.put()
             self.redirect("/")
+            return
 
     def _verify_user(self, username, password, verify, email):
         errors = {}

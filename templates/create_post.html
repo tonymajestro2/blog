@@ -1,0 +1,29 @@
+{% extends "base.html"%}
+{% block content %}
+
+<h2>new post</h2>
+<div id="newPostForm">
+    <form method="post">
+        <div id="title">
+            subject <br>
+            <input type="text" name="title">
+        </div>
+
+        <div id="body_text">
+            blog <br>
+            <textarea name="body"></textarea>
+        </div>
+
+        <div id="create_post_error">
+            {{ create_post_error }}
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="back">
+        <a href="/blog">Back to Blog</a>
+    </div>
+</div>
+
+{% endblock %}

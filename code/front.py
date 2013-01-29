@@ -5,24 +5,20 @@ class Front(BaseHandler):
     def render_posts(self, posts):
         html_list = []
         for p in posts:
-            html = get_html(
-                    "post.html",
-                    title = p.title,
-                    created = p.created,
-                    body = p.body)
-
+            params = dict(title = p.title, created = p.created, body = p.body)
+            html = self.get_html("post.html", **params)
             html_list.append(html)
+
         return "".join(html_list)
 
     def get(self, username):
         user = self.get_user()
         if not (user and user.username == username):
-            self.redirect("/")
+            self.redirect("/login")
+            return
 
-        posts_html = self.render_posts(user.posts)
-        self.render(
-                "front.html", 
-                username, 
-                posts = posts_html, 
-                username = username.capitalize())
+        posts = user.posts.order("-created").run(limit = 10)
+        posts_html = self.render_posts(posts)
+        params = dict(posts = posts_html, username = username)
+        self.render("front.html", username, **params)
 

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>{{ username }}</h2>
-
-{{ posts | safe}}
+<div id="front_container">
+    <h2>{{ username }}</h2>
+    {{ posts | safe}}
+    <a href="/createPost">Add new post</a>
+</div>
 {% endblock %}
