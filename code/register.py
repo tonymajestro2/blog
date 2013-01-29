@@ -29,6 +29,11 @@ class Register(BaseHandler):
             self.render("register.html", "Register")
 
     def post(self):
+        user = self.get_user()
+        if user:
+            self.redirect("/{0}".format(user.username))
+            return
+
         username = self.request.get("username")
         password = self.request.get("password")
         verify = self.request.get("verify")

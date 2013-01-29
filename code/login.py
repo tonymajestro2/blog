@@ -20,6 +20,11 @@ class Login(BaseHandler):
             self.render_page()
 
     def post(self):
+        user = self.get_user()
+        if user:
+            self.redirect("/{0}".format(user.username))
+            return
+
         username = self.request.get("username")
         password = self.request.get("password")
 
