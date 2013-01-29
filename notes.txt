@@ -1,7 +1,6 @@
 To Do:
 --------
 - clean up session token checking, automate somehow
-- get rid of register button when logged in
 - clean up css rules, html divs
 
 - front page:

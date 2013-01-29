@@ -12,7 +12,12 @@ class Login(BaseHandler):
         self.render("login_page.html", "Login", login_form = login_form)
 
     def get(self):
-        self.render_page()
+        user = self.get_user()
+        if user:
+            self.redirect("/{0}".format(user.username))
+            return
+        else:
+            self.render_page()
 
     def post(self):
         username = self.request.get("username")

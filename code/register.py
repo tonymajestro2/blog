@@ -21,7 +21,12 @@ def valid_email(email):
 
 class Register(BaseHandler):
     def get(self):
-        self.render("register.html", "Register")
+        user = self.get_user()
+        if user:
+            self.redirect("/{0}".format(user.username))
+            return
+        else:
+            self.render("register.html", "Register")
 
     def post(self):
         username = self.request.get("username")
