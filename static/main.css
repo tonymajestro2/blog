@@ -321,7 +321,7 @@ footer #quote {
     font-size: 14px;
 }
 
-input[type=submit] {
+/*input[type=submit] {
     width: 70px;
     height: 25px;
     background-color: #70995C;
@@ -333,5 +333,5 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #658A53;
-}
+}*/
 
