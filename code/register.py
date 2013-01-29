@@ -1,13 +1,12 @@
 import re
-import utils
 from models import User
 from base import BaseHandler
 
-
+USERNAME_RE = r"^[a-zA-Z0-9_]{3,16}$"
 def valid_username(username):
     """ Valid usernames are 3-16 characters, using only letters, numbers, or
         userscore characters. """
-    user_re = re.compile("^[a-zA-Z0-9_]{3,16}$")
+    user_re = re.compile(USERNAME_RE)
     return user_re.match(username)
 
 def valid_password(password):

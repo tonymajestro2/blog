@@ -13,7 +13,7 @@ jinja_env = jinja2.Environment(
 
 class BaseHandler(webapp2.RequestHandler):
     def set_log_links(self, params):
-        if self.logged_in():
+        if self.get_user():
             params["log_link"] = "/logout"
             params["log_text"] = "Logout"
         else:
@@ -50,8 +50,9 @@ class BaseHandler(webapp2.RequestHandler):
     def logout(self):
         self.set_cookie("session_cookie", "")
 
-    def logged_in(self):
-        return self.validate_user()
+    def get_user(self):
+        user_id = self.validate_user()
+        return user_id and User.get_by_id(user_id)
 
     def validate_user(self):
         token = self.read_cookie("session_cookie")
@@ -60,8 +61,12 @@ class BaseHandler(webapp2.RequestHandler):
 
 class Main(BaseHandler):
     def get(self):
-        login_form = self.get_html("login.html")
-        self.render("main.html", "Blog", login_form = login_form)
+        user = self.get_user()
+        if user:
+            self.redirect("/{0}".format(user.username))
+        else:
+            login_form = self.get_html("login_form.html")
+            self.render("main.html", "Blog", login_form = login_form)
 
 
 

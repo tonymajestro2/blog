@@ -5,7 +5,7 @@ from models import User
 
 class Login(BaseHandler):
     def render_login(self, **errors):
-        return self.get_html("login.html", **errors)
+        return self.get_html("login_form.html", **errors)
 
     def render_page(self, **errors):
         login_form = self.render_login(**errors)
@@ -23,7 +23,7 @@ class Login(BaseHandler):
         else:
             user = User.get_by_name(username)
             self.login(user)
-            self.redirect("/")
+            self.redirect("/{0}".format(username))
 
     def _valid_login_credentials(self, username, password):
         user = User.get_by_name(username)

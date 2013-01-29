@@ -24,6 +24,11 @@ class User(db.Model):
         user = User.all().filter("email =", email)
         return user.get()
 
+    @classmethod
+    def get_by_id(cls, user_id):
+        key = db.Key.from_path("User", int(user_id))
+        return key and db.get(key)
+
 
 class Post(db.Model):
     user = db.ReferenceProperty(User, collection_name="posts", required = True)

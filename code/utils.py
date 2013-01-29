@@ -49,7 +49,8 @@ def validate_session_token(token):
     and compare it to the given token.
     """
     id_val = token.split("|")[0]
-    return token == make_session_token(id_val)
+    if token == make_session_token(id_val):
+        return id_val
 
 def hash_str(s):
     """ Create a hash using the secret key for use in session tokens. """
