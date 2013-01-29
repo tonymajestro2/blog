@@ -24,3 +24,10 @@ class User(db.Model):
         user = User.all().filter("email =", email)
         return user.get()
 
+
+class Post(db.Model):
+    user = db.ReferenceProperty(User, collection_name="posts", required = True)
+    title = db.StringProperty(required = True)
+    body = db.TextProperty(required = True)
+    created = db.DateTimeProperty(auto_now_add = True)
+
