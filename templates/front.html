@@ -4,6 +4,9 @@
 <div id="front_container">
     <h2>{{ username }}</h2>
     {{ posts | safe}}
-    <a href="/createPost">Add new post</a>
+
+    <div id="createButton">
+        <a href="/createPost">New Post</a>
+    </div>
 </div>
 {% endblock %}

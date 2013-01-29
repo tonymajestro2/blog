@@ -1,28 +1,26 @@
 {% extends "base.html"%}
 {% block content %}
 
-<h2>new post</h2>
-<div id="newPostForm">
-    <form method="post">
-        <div id="title">
-            subject <br>
-            <input type="text" name="title">
-        </div>
+<div id="new_post_content">
+    <h2>new post</h2>
+    <div id="new_post_container">
+        <form method="post">
+            <div id="title">
+                Title <br>
+                <input type="text" name="title">
+            </div>
 
-        <div id="body_text">
-            blog <br>
-            <textarea name="body"></textarea>
-        </div>
+            <div id="body_text">
+                Blog content <br>
+                <textarea name="body"></textarea>
+            </div>
 
-        <div id="create_post_error">
-            {{ create_post_error }}
-        </div>
+            <div id="create_post_error">
+                {{ create_post_error }}
+            </div>
 
-        <input type="submit" value="Submit">
-    </form>
-
-    <div id="back">
-        <a href="/blog">Back to Blog</a>
+            <input type="submit" value="Submit">
+        </form>
     </div>
 </div>
 

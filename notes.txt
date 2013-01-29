@@ -4,12 +4,8 @@ To Do:
 - clean up css rules, html divs
 
 - front page:
-    - limit 10 or so recent posts
-    - order by date
     - maybe links to recent posts on side bar?
     
-- style the create_post.html page
-
 - ** Add https to login pages **
     - consider using two session cookies;
         - one for accessing non-secure pages
@@ -66,3 +62,5 @@ Images:
 |                  |
 |                  |
 +------------------+
+
+color scheme: cool world

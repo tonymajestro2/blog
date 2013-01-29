@@ -252,9 +252,60 @@ footer #quote {
 
 #front_container pre {
     font-family: sans-serif;
+    font-size: 15px;
     padding-left: 5px;
 }
 
+#front_container #createButton {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#front_container #createButton a {
+    height: 35px;
+    background-color: #70995C;
+    color: white;
+    margin: 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+#front_container #createButton a:hover {
+    background-color: #658A53;
+}
+
+
+
+/* Create post form */
+#new_post_container {
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 15px 0px 10px 20px;
+    margin-top: -15px;
+    font-family: sans-serif;
+}
+
+#new_post_content h2 {
+    padding: 10px 5px 10px 10px;
+    background-color: #33664D;
+    font-size: 17px;
+    color: #FFF9EE;
+}
+
+#new_post_container textarea {
+    width: 500px;
+    height: 200px;
+}
+
+#new_post_container #title {
+    padding-bottom: 30px;
+}
+
+#new_post_container input[type=text] {
+    width: 500px;
+}
 
 /* Misc */
 
@@ -270,6 +321,17 @@ footer #quote {
     font-size: 14px;
 }
 
+input[type=submit] {
+    width: 70px;
+    height: 25px;
+    background-color: #70995C;
+    color: white;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
 
-
+input[type=submit]:hover {
+    background-color: #658A53;
+}
 
