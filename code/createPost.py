@@ -20,7 +20,7 @@ class CreatePost(BaseHandler):
             return 
 
         title = self.request.get("title")
-        body = self.request.get("body")
+        body = self.request.get("body").replace("\n", "<br>")
 
         if not (title and body):
             self.render_create_form(create_post_error = "Please enter a title and post")

@@ -227,6 +227,10 @@ footer #quote {
     padding-top: 15px;
 }
 
+#post p {
+    font-size: 15px;
+}
+
 #front_container h2 {
     color: #142933;
     font-size: 25px;
@@ -306,6 +310,9 @@ footer #quote {
 #new_post_container input[type=text] {
     width: 500px;
 }
+
+
+
 
 /* Misc */
 
