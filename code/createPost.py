@@ -1,24 +1,16 @@
-from base import BaseHandler
+from base import BaseHandler, restricted_to_logged_in
 from models import User, Post
 
 class CreatePost(BaseHandler):
-    def render_create_form(self, **errors):
-        self.render("create_post.html", "Create Post", **errors)
+    def render(self, **errors):
+        super(CreatePost, self).render("create_post.html", "Create Post", **errors)
 
+    @restricted_to_logged_in
     def get(self):
-        user = self.get_user()
-        if not user:
-            self.redirect("/login")
-            return
-        else:
-            self.render_create_form()
+        self.render()
 
+    @restricted_to_logged_in
     def post(self):
-        user = self.get_user()
-        if not user:
-            self.redirect("/login")
-            return 
-
         title = self.request.get("title")
         body = self.request.get("body").replace("\n", "<br>")
 

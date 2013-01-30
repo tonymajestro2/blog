@@ -10,27 +10,44 @@ jinja_env = jinja2.Environment(
         loader = jinja2.FileSystemLoader(template_dir),
         autoescape = True)
 
+def restricted_to_logged_in(method):
+    """ Describes a method that should redirect to the login
+    page if the user is not logged in. Otherwise, the method is
+    executed.
+    """
+    def wrapper(self, *args, **kwargs):
+        if self.logged_in():
+            method(self, *args, **kwargs)
+        else:
+            self.redirect("/login")
+
+    return wrapper
+
+
+def restricted_to_logged_out(method):
+    """ Describes a method that should redirect to the user's
+    front page if they are already logged in. Otherwise, the
+    method is executed.
+    """
+    def wrapper(self, *args, **kwargs):
+        if self.logged_in():
+            self.redirect("/{0}".format(self.user.username))
+        else:
+            method(self, *args, **kwargs)
+
+    return wrapper
+
 
 class BaseHandler(webapp2.RequestHandler):
-    def set_header_links(self, params):
-        if self.get_user():
-            params["log_link"] = "/logout"
-            params["log_text"] = "Logout"
-        else:
-            params["log_link"] = "/login"
-            params["log_text"] = "Login"
-            params["register_link"] = """<li><a href="/register">Register</a></li>"""
-
-        return params
+    def __init__(self, request, response):
+        self.initialize(request, response)
+        self.user = self.get_user()
 
     def get_html(self, template, **params):
         t = jinja_env.get_template(template)
         return t.render(**params)
 
     def render(self, template, title, **params):
-        if params == None:
-            params = {}
-
         params["title"] = title
         self.set_header_links(params)
         html_str = self.get_html(template, **params)
@@ -51,6 +68,9 @@ class BaseHandler(webapp2.RequestHandler):
     def logout(self):
         self.set_cookie("session_cookie", "")
 
+    def logged_in(self):
+        return self.user
+
     def get_user(self):
         user_id = self.validate_user()
         return user_id and User.get_by_id(user_id)
@@ -59,16 +79,22 @@ class BaseHandler(webapp2.RequestHandler):
         token = self.read_cookie("session_cookie")
         return token and utils.validate_session_token(token)
 
-
-class Main(BaseHandler):
-    def get(self):
-        user = self.get_user()
-        if user:
-            self.redirect("/{0}".format(user.username))
-            return
+    def set_header_links(self, params):
+        if self.get_user():
+            params["log_link"] = "/logout"
+            params["log_text"] = "Logout"
         else:
-            login_form = self.get_html("login_form.html")
-            self.render("main.html", "Blog", login_form = login_form)
+            params["log_link"] = "/login"
+            params["log_text"] = "Login"
+            params["register_link"] = """<li><a href="/register">Register</a></li>"""
+
+        return params
+
+
+
+
+
+
 
 
 

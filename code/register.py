@@ -1,6 +1,6 @@
 import re
 from models import User
-from base import BaseHandler
+from base import BaseHandler, restricted_to_logged_out
 
 
 USERNAME_RE = r"^[a-zA-Z0-9_]{3,16}$"
@@ -23,20 +23,12 @@ def valid_email(email):
 
 
 class Register(BaseHandler):
+    @restricted_to_logged_out
     def get(self):
-        user = self.get_user()
-        if user:
-            self.redirect("/{0}".format(user.username))
-            return
-        else:
-            self.render("register.html", "Register")
+        self.render("register.html", "Register")
 
+    @restricted_to_logged_out
     def post(self):
-        user = self.get_user()
-        if user:
-            self.redirect("/{0}".format(user.username))
-            return
-
         username = self.request.get("username")
         password = self.request.get("password")
         verify = self.request.get("verify")
@@ -48,7 +40,8 @@ class Register(BaseHandler):
         else:
             user = User.register(username, password, email)
             user.put()
-            self.redirect("/")
+            self.login(user)
+            self.redirect("/{0}".format(username))
             return
 
     def _verify_user(self, username, password, verify, email):

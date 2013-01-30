@@ -1,5 +1,5 @@
 import webapp2
-from base import Main
+from main import Main
 from register import Register
 from login import Login, Logout
 from front import Front

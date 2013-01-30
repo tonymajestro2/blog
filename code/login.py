@@ -1,5 +1,5 @@
 import utils
-from base import BaseHandler
+from base import BaseHandler, restricted_to_logged_out
 from models import User
 
 
@@ -7,24 +7,16 @@ class Login(BaseHandler):
     def render_login(self, **errors):
         return self.get_html("login_form.html", **errors)
 
-    def render_page(self, **errors):
+    def render(self, **errors):
         login_form = self.render_login(**errors)
-        self.render("login_page.html", "Login", login_form = login_form)
+        super(Login, self).render("login_page.html", "Login", login_form = login_form)
 
+    @restricted_to_logged_out
     def get(self):
-        user = self.get_user()
-        if user:
-            self.redirect("/{0}".format(user.username))
-            return
-        else:
-            self.render_page()
+        self.render()
 
+    @restricted_to_logged_out
     def post(self):
-        user = self.get_user()
-        if user:
-            self.redirect("/{0}".format(user.username))
-            return
-
         username = self.request.get("username")
         password = self.request.get("password")
 

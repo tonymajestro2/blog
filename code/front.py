@@ -1,4 +1,4 @@
-from base import BaseHandler
+from base import BaseHandler, restricted_to_logged_in
 from models import User, Post
 
 class Front(BaseHandler):
@@ -11,14 +11,16 @@ class Front(BaseHandler):
 
         return "".join(html_list)
 
+    @restricted_to_logged_in
     def get(self, username):
-        user = self.get_user()
-        if not (user and user.username == username):
-            self.redirect("/login")
+        if not self._visiting_own_blog(username):
+            self.error(401)
             return
 
-        posts = user.posts.order("-created").run(limit = 10)
+        posts = self.user.posts.order("-created").run(limit = 10)
         posts_html = self.render_posts(posts)
         params = dict(posts = posts_html, username = username)
         self.render("front.html", username, **params)
 
+    def _visiting_own_blog(self, username):
+        return self.user.username == username
