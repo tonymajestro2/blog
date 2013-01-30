@@ -17,6 +17,3 @@ class Front(BaseHandler):
         posts_html = self.render_posts(posts)
         params = dict(posts = posts_html, username = self.user.username)
         self.render("front.html", self.user.username, **params)
-
-    def _visiting_own_blog(self, username):
-        return self.user.username == username
