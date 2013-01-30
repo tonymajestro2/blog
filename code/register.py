@@ -2,6 +2,7 @@ import re
 from models import User
 from base import BaseHandler
 
+
 USERNAME_RE = r"^[a-zA-Z0-9_]{3,16}$"
 def valid_username(username):
     """ Valid usernames are 3-16 characters, using only letters, numbers, or
@@ -9,13 +10,15 @@ def valid_username(username):
     user_re = re.compile(USERNAME_RE)
     return user_re.match(username)
 
+PASSWORD_RE = r"^[a-zA-Z0-9]{4,20}$"
 def valid_password(password):
     """ Valid passwords are at least 4 characters using letters or numbers. """
-    pw_re = re.compile("^[a-zA-Z0-9]{4,20}$")
+    pw_re = re.compile(PASSWORD_RE)
     return pw_re.match(password)
 
+EMAIL_RE = r"[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+\.[a-zA-Z0-9_]+"
 def valid_email(email):
-    email_re = re.compile("^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9_]+")
+    email_re = re.compile(EMAIL_RE)
     return email_re.match(email)
 
 
