@@ -10,32 +10,6 @@ jinja_env = jinja2.Environment(
         loader = jinja2.FileSystemLoader(template_dir),
         autoescape = True)
 
-def restricted_to_logged_in(method):
-    """ Describes a method that should redirect to the login
-    page if the user is not logged in. Otherwise, the method is
-    executed.
-    """
-    def wrapper(self, *args, **kwargs):
-        if self.logged_in():
-            method(self, *args, **kwargs)
-        else:
-            self.redirect("/login")
-
-    return wrapper
-
-
-def restricted_to_logged_out(method):
-    """ Describes a method that should redirect to the user's
-    front page if they are already logged in. Otherwise, the
-    method is executed.
-    """
-    def wrapper(self, *args, **kwargs):
-        if self.logged_in():
-            self.redirect("/blog")
-        else:
-            method(self, *args, **kwargs)
-
-    return wrapper
 
 
 class BaseHandler(webapp2.RequestHandler):
@@ -91,8 +65,28 @@ class BaseHandler(webapp2.RequestHandler):
         return params
 
 
+class RestrictedToLoginHandler(BaseHandler):
+    """ Manages handlers whose methods are restricted to logged in users.
+    If the user is logged in, it procedes to execute the handler's methods.
+    Otherwise, it redirects the user to the login page.
+    """
+    def dispatch(self):
+        if self.logged_in():
+            super(RestrictedToLoginHandler, self).dispatch()
+        else:
+            self.redirect("/login")
 
 
+class RestrictedToLogoutHandler(BaseHandler):
+    """ Manages handlers whose methods are restricted to logged out users.
+    If the user is logged out, it procedes to execute the handler's methods.
+    Otherwise, it redirects the usre to their front page.
+    """
+    def dispatch(self):
+        if not self.logged_in():
+            super(RestrictedToLogoutHandler, self).dispatch()
+        else:
+            self.redirect("/blog")
 
 
 

@@ -1,7 +1,7 @@
-from base import BaseHandler, restricted_to_logged_in
+from base import BaseHandler, RestrictedToLoginHandler
 from models import User, Post
 
-class Front(BaseHandler):
+class Front(RestrictedToLoginHandler):
     def render_posts(self, posts):
         html_list = []
         for p in posts:
@@ -11,7 +11,6 @@ class Front(BaseHandler):
 
         return "".join(html_list)
 
-    @restricted_to_logged_in
     def get(self):
         posts = self.user.posts.order("-created").run(limit = 10)
         posts_html = self.render_posts(posts)

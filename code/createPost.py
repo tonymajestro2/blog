@@ -1,15 +1,13 @@
-from base import BaseHandler, restricted_to_logged_in
+from base import BaseHandler, RestrictedToLoginHandler
 from models import User, Post
 
-class CreatePost(BaseHandler):
+class CreatePost(RestrictedToLoginHandler):
     def render(self, **errors):
         super(CreatePost, self).render("create_post.html", "Create Post", **errors)
 
-    @restricted_to_logged_in
     def get(self):
         self.render()
 
-    @restricted_to_logged_in
     def post(self):
         title = self.request.get("title")
         body = self.request.get("body").replace("\n", "<br>")

@@ -1,6 +1,6 @@
 import re
 from models import User
-from base import BaseHandler, restricted_to_logged_out
+from base import BaseHandler, RestrictedToLogoutHandler
 
 
 USERNAME_RE = r"^[a-zA-Z0-9_]{3,16}$"
@@ -22,12 +22,10 @@ def valid_email(email):
     return email_re.match(email)
 
 
-class Register(BaseHandler):
-    @restricted_to_logged_out
+class Register(RestrictedToLogoutHandler):
     def get(self):
         self.render("register.html", "Register")
 
-    @restricted_to_logged_out
     def post(self):
         username = self.request.get("username")
         password = self.request.get("password")
