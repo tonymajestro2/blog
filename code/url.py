@@ -10,6 +10,6 @@ args = [("/", Main),
         ("/logout", Logout),
         ("/register", Register),
         ("/createPost", CreatePost),
-        ("/([a-zA-Z0-9_]+)", Front)]
+        ("/blog", Front)]
 
 app = webapp2.WSGIApplication(args, debug = True)

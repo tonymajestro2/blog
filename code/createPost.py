@@ -17,9 +17,9 @@ class CreatePost(BaseHandler):
         if not (title and body):
             self.render_create_form(create_post_error = "Please enter a title and post")
         else:
-            post = Post.register(user, title, body)
+            post = Post.register(self.user, title, body)
             post.put()
-            self.redirect("/{0}".format(user.username))
+            self.redirect("/blog")
 
 
 

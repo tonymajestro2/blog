@@ -8,7 +8,7 @@ class Main(BaseHandler):
     def get(self):
         user = self.get_user()
         if user:
-            self.redirect("/{0}".format(user.username))
+            self.redirect("/blog")
             return
         else:
             login_form = self.get_html("login_form.html")

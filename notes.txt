@@ -1,7 +1,9 @@
 To Do:
 --------
-- clean up session token checking, automate somehow
-- clean up css rules, html divs
+- clean up rendering code for main page login, front page
+    - clean up render functions (too many, change method names)
+
+- clean up markup, css rules, html divs
 
 - front page:
     - maybe links to recent posts on side bar?

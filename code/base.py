@@ -31,7 +31,7 @@ def restricted_to_logged_out(method):
     """
     def wrapper(self, *args, **kwargs):
         if self.logged_in():
-            self.redirect("/{0}".format(self.user.username))
+            self.redirect("/blog")
         else:
             method(self, *args, **kwargs)
 

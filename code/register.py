@@ -41,7 +41,7 @@ class Register(BaseHandler):
             user = User.register(username, password, email)
             user.put()
             self.login(user)
-            self.redirect("/{0}".format(username))
+            self.redirect("/blog")
             return
 
     def _verify_user(self, username, password, verify, email):

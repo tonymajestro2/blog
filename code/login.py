@@ -25,7 +25,7 @@ class Login(BaseHandler):
         else:
             user = User.get_by_name(username)
             self.login(user)
-            self.redirect("/{0}".format(username))
+            self.redirect("/blog")
             return
 
     def _valid_login_credentials(self, username, password):
