@@ -89,7 +89,6 @@ class RestrictedToLogoutHandler(BaseHandler):
             self.redirect("/blog")
 
 
-# Test for new unstable branch
 
 
 
