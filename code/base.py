@@ -23,7 +23,7 @@ class BaseHandler(webapp2.RequestHandler):
 
     def render(self, template, title, **params):
         params["title"] = title
-        self.set_header_links(params)
+        params["s"] = self
         html_str = self.get_html(template, **params)
         self.response.out.write(html_str)
 
@@ -53,16 +53,15 @@ class BaseHandler(webapp2.RequestHandler):
         token = self.read_cookie("session_cookie")
         return token and utils.validate_session_token(token)
 
-    def set_header_links(self, params):
+    def generate_header_links(self):
+        links = []
         if self.get_user():
-            params["log_link"] = "/logout"
-            params["log_text"] = "Logout"
+            links.append(("/logout", "Logout"))
         else:
-            params["log_link"] = "/login"
-            params["log_text"] = "Login"
-            params["register_link"] = """<li><a href="/register">Register</a></li>"""
+            links.append(("/register", "Register"))
+            links.append(("/login", "Login"))
 
-        return params
+        return links
 
 
 class RestrictedToLoginHandler(BaseHandler):
