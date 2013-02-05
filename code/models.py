@@ -5,6 +5,7 @@ class User(db.Model):
     username = db.StringProperty(required = True)
     pw_hash = db.StringProperty(required = True)
     email = db.StringProperty(required = True)
+    public = db.BooleanProperty(default=False)
 
     @classmethod
     def register(cls, username, password, email):
