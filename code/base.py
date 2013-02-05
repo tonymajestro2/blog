@@ -56,6 +56,7 @@ class BaseHandler(webapp2.RequestHandler):
     def generate_header_links(self):
         links = []
         if self.get_user():
+            links.append(("/settings", "Settings"))
             links.append(("/logout", "Logout"))
         else:
             links.append(("/register", "Register"))

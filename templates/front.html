@@ -5,8 +5,6 @@
     <h2>{{ username }}</h2>
     {{ posts | safe}}
 
-    <div id="createButton">
-        <a href="/createPost">New Post</a>
-    </div>
+    {{ createButton | safe }}
 </div>
 {% endblock %}

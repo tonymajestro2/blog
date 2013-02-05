@@ -20,6 +20,10 @@ handlers:
   script: code.url.app
   secure: always
 
+- url: /settings
+  script: code.url.app
+  secure: always
+
 - url: /.*
   script: code.url.app
   secure: never
