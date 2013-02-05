@@ -328,6 +328,11 @@ footer #quote {
     font-size: 14px;
 }
 
+#create_post_error {
+    color: #8C1D04;
+    font-size: 14px;
+}
+
 /*input[type=submit] {
     width: 70px;
     height: 25px;

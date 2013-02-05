@@ -7,6 +7,8 @@ To Do:
 
 - front page:
     - maybe links to recent posts on side bar?
+
+- client-side register form validation
     
 - ** Add https to login pages **
     - consider using two session cookies;

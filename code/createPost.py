@@ -13,7 +13,7 @@ class CreatePost(RestrictedToLoginHandler):
         body = self.request.get("body").replace("\n", "<br>")
 
         if not (title and body):
-            self.render_create_form(create_post_error = "Please enter a title and post")
+            self.render(create_post_error = "Please enter a title and post")
         else:
             post = Post.register(self.user, title, body)
             post.put()

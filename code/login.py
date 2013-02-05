@@ -24,7 +24,6 @@ class Login(RestrictedToLogoutHandler):
             user = User.get_by_name(username)
             self.login(user)
             self.redirect("/blog")
-            return
 
     def _valid_login_credentials(self, username, password):
         user = User.get_by_name(username)
@@ -39,7 +38,6 @@ class Logout(BaseHandler):
     def get(self):
         self.logout()
         self.redirect("/")
-        return
 
 
 
