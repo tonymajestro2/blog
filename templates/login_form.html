@@ -1,25 +1,27 @@
 
-<div id="login_content">
-    <h2>login</h2>
+<div id="login_container">
+    <div class="boxed_container">
+        <h2>login</h2>
 
-    <div id="login_container">
+        <div class="boxed_content">
+            <form method="post" action="/login">
+                <div class="field_container">
+                    <label>Username</label>
+                    <input type="text" name="username">
+                </div>
 
-        <form method="post" action="/login">
-            <div class="field_container">
-                <label>Username</label>
-                <input type="text" name="username">
-            </div>
+                <div class="field_container">
+                    <label>Password</label>
+                    <input type="password" name="password">
+                </div>
 
-            <div class="field_container">
-                <label>Password</label>
-                <input type="password" name="password">
-            </div>
+                <div id="login_error">
+                    <span class="error">{{ login_error }}</span>
+                </div>
 
-            <div id="login_error">
-                <span class="error">{{ login_error }}</span>
-            </div>
-
-            <input type="submit" value="Login">
-        </form>
+                <input type="submit" value="Login">
+            </form>
+        </div>
     </div>
 </div>
+

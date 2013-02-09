@@ -1,4 +1,4 @@
-/* Main page */
+/* Base html */
 
 html {
     height: 100%;
@@ -111,17 +111,17 @@ footer #quote {
 
 }
 
-#main_page h2 {
+#main_page #left_col h2 {
     color: #142933;
     font-size: 25px;
     font-weight: normal;
 }
 
-#main_page p {
+#main_page #left_col p {
     font-size: 15px;
 }
 
-#main_page h3 {
+#main_page #left_col h3 {
     font-size: 17px;
     margin-bottom: -7px;
 }
@@ -159,35 +159,16 @@ footer #quote {
 }
 
 
+/* Forms with boxed in content (register, login forms) */
 
-
-
-
-/* Login / Register*/
-
-#login_content h2 {
-    padding: 10px 5px 10px 10px;
-    background-color: #33664D;
-    font-size: 17px;
-    color: #FFF9EE;
-}
-
-#register_content h2 {
+.boxed_container h2 {
     padding: 10px 0px 10px 10px;
     background-color: #33664D;
     font-size: 17px;
     color: #FFF9EE;
 }
-#login_container {
-    border-left: 1px solid #cccccc;
-    border-right: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
-    padding: 15px 0px 10px 20px;
-    margin-top: -15px;
-    background-color: white;
-}
 
-#register_container {
+.boxed_content {
     border-left: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
@@ -206,12 +187,20 @@ footer #quote {
     padding-top: 5px;
 }
 
+
+
+
+/* Register page */
+
 #register_container input[type=submit] {
     margin-top: 10px;
 }
 
 
+
+
 /* front page */
+
 #front_container {
     padding-left: 6%;
     font-family: sans-serif;
@@ -313,6 +302,13 @@ footer #quote {
 
 
 
+/* Settings page */
+
+#settings_container input[type=submit] {
+    margin-top: 10px;
+}
+
+
 
 /* Misc */
 
@@ -332,18 +328,4 @@ footer #quote {
     color: #8C1D04;
     font-size: 14px;
 }
-
-/*input[type=submit] {
-    width: 70px;
-    height: 25px;
-    background-color: #70995C;
-    color: white;
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-input[type=submit]:hover {
-    background-color: #658A53;
-}*/
 

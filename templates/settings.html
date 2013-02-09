@@ -1,15 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Settings</h2>
-<form method="post">
-    <label>
-        Public (others can view your blog)
-        <input type="checkbox" name="public" value="true" {{ public_checked }}>
-    </label>
+<div id="settings_container">
+    <div class="boxed_container">
+        <h2>Settings</h2>
 
-    <div id="submit">
-        <input type="submit" value="Submit">
+        <div class="boxed_content">
+            <form method="post">
+                <label>
+                    Public (others can view your blog)
+                    <input type="checkbox" name="public" value="true" {{ public_checked }}>
+                </label>
+
+                <div id="submit">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
     </div>
-</form>
+</div>
 {% endblock %}

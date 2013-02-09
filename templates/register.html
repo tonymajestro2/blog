@@ -2,40 +2,41 @@
 
 {% block content %}
 
-<div id="register_content">
-    <h2>register</h2>
+<div id="register_container">
+    <div class="boxed_container">
+        <h2>register</h2>
 
-    <div id="register_container">
+        <div class="boxed_content">
+            <form method="post">
+                <div class="field_container">
+                    <label>Username</label>
+                    <input type="text" name="username" value="{{ username }}">
+                    <span class="error">{{ username_error }}</span>
+                </div>
 
-        <form method="post">
-            <div class="field_container">
-                <label>Username</label>
-                <input type="text" name="username" value="{{ username }}">
-                <span class="error">{{ username_error }}</span>
-            </div>
+                <div class="field_container">
+                    <label>Password</label>
+                    <input type="password" name="password">
+                    <span class="error">{{ password_error }}</span>
+                </div>
 
-            <div class="field_container">
-                <label>Password</label>
-                <input type="password" name="password">
-                <span class="error">{{ password_error }}</span>
-            </div>
+                <div class="field_container">
+                    <label>Verify Password</label>
+                    <input type="password" name="verify">
+                    <span class="error">{{ verify_error }}</span>
+                </div>
 
-            <div class="field_container">
-                <label>Verify Password</label>
-                <input type="password" name="verify">
-                <span class="error">{{ verify_error }}</span>
-            </div>
+                <div class="field_container">
+                    <label>Email</label>
+                    <input type="text" name="email" value="{{ email }}">
+                    <span class="error">{{ email_error }}</span>
+                </div>
 
-            <div class="field_container">
-                <label>Email</label>
-                <input type="text" name="email" value="{{ email }}">
-                <span class="error">{{ email_error }}</span>
-            </div>
-
-            <div id="submit_btn">
-                <input type="submit" value="Submit">
-            </div>
-        </form>
+                <div id="submit_btn">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
