@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="private_container">
+    {{ s.render_front() | safe }}
+
+    <div id="newPostButton">
+        <a href="/createPost">New Post</a>
+    </div>
+</div>
+{% endblock %}

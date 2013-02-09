@@ -249,12 +249,13 @@ footer #quote {
     padding-left: 5px;
 }
 
-#front_container #createButton {
+#private_container #newPostButton {
     padding-top: 30px;
     padding-bottom: 30px;
+    padding-left: 6%;
 }
 
-#front_container #createButton a {
+#private_container #newPostButton a {
     height: 35px;
     background-color: #70995C;
     color: white;
@@ -264,7 +265,7 @@ footer #quote {
     font-size: 13px;
 }
 
-#front_container #createButton a:hover {
+#private_container #newPostButton a:hover {
     background-color: #658A53;
 }
 
