@@ -1,21 +1,13 @@
 To Do:
 --------
-- clean up rendering code for main page login, front page
-    - clean up render functions (too many, change method names)
-
-- clean up markup, css rules, html divs
-
 - front page:
     - maybe links to recent posts on side bar?
 
-- client-side register form validation
-    
-- ** Add https to login pages **
-    - consider using two session cookies;
-        - one for accessing non-secure pages
-        - a 'secure' cookie that only gets transmitted when the user
-          accesses a secure page through HTTPS.  This will prevent
-          sniffing the secure session token
+- consider using two session cookies;
+    - one for accessing non-secure pages
+    - a 'secure' cookie that only gets transmitted when the user
+      accesses a secure page through HTTPS.  This will prevent
+      sniffing the secure session token
 
 - Add public/private functionality
     - add option to register page

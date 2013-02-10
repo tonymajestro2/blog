@@ -31,12 +31,13 @@ class Register(RestrictedToLogoutHandler):
         password = self.request.get("password")
         verify = self.request.get("verify")
         email = self.request.get("email")
+        public = self.request.get("public") == "yes"
 
         errors = self._verify_user(username, password, verify, email)
         if errors:
             self.render("register.html", "Register", **errors)
         else:
-            user = User.register(username, password, email)
+            user = User.register(username, password, email, public)
             user.put()
             self.login(user)
             self.redirect("/blog")

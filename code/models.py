@@ -8,11 +8,12 @@ class User(db.Model):
     public = db.BooleanProperty(default=False)
 
     @classmethod
-    def register(cls, username, password, email):
+    def register(cls, username, password, email, public):
         pw_hash = utils.make_pw_hash(username, password)
         user = User(username = username,
                     pw_hash = pw_hash,
-                    email = email)
+                    email = email,
+                    public = public)
         return user
 
     @classmethod

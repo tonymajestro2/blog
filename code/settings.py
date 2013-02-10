@@ -3,17 +3,24 @@ from models import User
 
 class Settings(RestrictedToLoginHandler):
     def get(self):
-        public = "checked" if self.user.public else ""
-        self.render("settings.html", "Settings", public_checked = public)
+        yes_checked = no_checked = ""
+        if self.user.public:
+            yes_checked = "checked"
+        else:
+            no_checked = "checked"
+
+        self.render(
+                "settings.html",
+                "Settings",
+                yes_checked = yes_checked,
+                no_checked = no_checked)
 
     def post(self):
-        public = self.request.get("public")
-        if public:
-            self.user.public = True
-        else:
-            self.user.public = False
+        public = self.request.get("public") == "yes"
+        if public != self.user.public:
+            self.user.public = public
+            self.user.put()
 
-        self.user.put()
         self.redirect("/blog")
 
 

@@ -8,10 +8,17 @@
 
     <div class="boxed_container">
         <form method="post">
-            <label>
-                Public (others can view your blog)
-                <input type="checkbox" name="public" value="true" {{ public_checked }}>
-            </label>
+            <div class="field_container">
+                <label>Public</label>
+                <div id="yes_radio">
+                    <input type="radio" name="public" value="yes" {{ yes_checked }}>
+                    Yes (anyone can view your blog)
+                </div>
+                <div id="no_radio">
+                    <input type="radio" name="public" value="no" {{ no_checked }}>
+                    No (only you can see your blog)
+                </div>
+            </div>
 
             <div id="submit">
                 <input type="submit" value="Submit">
