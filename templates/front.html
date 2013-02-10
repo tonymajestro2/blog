@@ -1,12 +1,7 @@
-{% extends "base.html" %}
-
-{% block content %}
 <div id="front_container">
     <h2>{{ username }}</h2>
-    {{ posts | safe}}
 
-    <div id="createButton">
-        <a href="/createPost">New Post</a>
-    </div>
+    {% for post in posts %}
+        {{ s.render_post(post) | safe }}
+    {% endfor %}
 </div>
-{% endblock %}

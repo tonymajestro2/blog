@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>{{ title }}</title>
-    <link type="text/css" rel="stylesheet" href="static/main.css">
+    <link type="text/css" rel="stylesheet" href="/static/main.css">
 </head>
 
 <body>
@@ -15,8 +15,9 @@
 
             <nav>
                 <ul>
-                    <li><a href="{{ log_link }}">{{ log_text }}</a></li>
-                    {{ register_link | safe }}
+                    {% for link in s.generate_header_links() %}
+                        <li><a href="{{ link[0] }}">{{ link[1] }}</a></li>
+                    {% endfor %}
                 </ul>
             </nav>
         </header>
