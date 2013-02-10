@@ -161,14 +161,15 @@ footer #quote {
 
 /* Forms with boxed in content (register, login forms) */
 
-.boxed_container h2 {
+.fancy_header h2, .fancy_header h3 {
     padding: 10px 0px 10px 10px;
     background-color: #33664D;
-    font-size: 17px;
-    color: #FFF9EE;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFAE0;
 }
 
-.boxed_content {
+.boxed_container {
     border-left: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
@@ -203,7 +204,7 @@ footer #quote {
 
 #front_container {
     padding-left: 6%;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #front_container header {
@@ -224,14 +225,14 @@ footer #quote {
     color: #142933;
     font-size: 25px;
     font-weight: normal;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
-#front_container h3 {
+/*#front_container h3 {
     padding: 10px 5px 10px 10px;
     font-size: 17px;
     color: #FFF9EE;
-}
+}*/
 
 #front_container h4 {
     position: absolute;
@@ -244,7 +245,7 @@ footer #quote {
 }
 
 #front_container pre {
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     padding-left: 5px;
 }
@@ -307,6 +308,18 @@ footer #quote {
 
 #settings_container input[type=submit] {
     margin-top: 10px;
+}
+
+
+
+/* Public users page */
+
+#public_container h2 {
+    color: #24221F;
+}
+
+#public_container .fancy_header h2, #public_container .fancy_header h3 {
+    background-color: #486655;
 }
 
 
