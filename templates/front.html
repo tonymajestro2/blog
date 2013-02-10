@@ -1,7 +1,11 @@
 <div id="front_container">
     <h2>{{ username }}</h2>
+    <div id="left_col">
+        {% for post in posts %}
+            {{ s.render_post(post) | safe }}
+        {% endfor %}
+    </div>
 
-    {% for post in posts %}
-        {{ s.render_post(post) | safe }}
-    {% endfor %}
+    <div id="right_col">
+    </div>
 </div>

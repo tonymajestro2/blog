@@ -117,6 +117,12 @@ footer a {
 
 }
 
+#main_page #left_col {
+    float: left;
+    width: 55%;
+    padding-right: 10%;
+}
+
 #main_page #left_col h2 {
     color: #142933;
     font-size: 25px;
@@ -132,11 +138,6 @@ footer a {
     margin-bottom: -7px;
 }
 
-#main_page #left_col {
-    float: left;
-    width: 55%;
-    padding-right: 10%;
-}
 
 #main_page #right_col {
     padding-top: 5%;
@@ -218,6 +219,10 @@ footer a {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#front_container #left_col {
+    width: 75%;
+}
+
 #front_container header {
     position: relative;
     background-color: #33664D;
@@ -229,6 +234,7 @@ footer a {
 }
 
 #post p {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
 
