@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="public_container">
-    {{ s.render_front() | safe }}
+    {{ s.render_front(user) | safe }}
 </div>
 {% endblock %}
